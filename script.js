@@ -21,7 +21,7 @@ const timelineMoments = [
     location: "Vĩnh Hy, Ninh Thuận",
     title: "Một chuyến đi, nhiều lát cắt của cùng một miền nhớ",
     description:
-      "Vì đều là Vĩnh Hy, mình gom các khung hình vào cùng một mốc để timeline gọn hơn mà cảm xúc vẫn liền mạch. Ảnh sẽ tự chạy như một album nhỏ ngay trong dòng thời gian.",
+      "Lần đầu cùng nhau đến Vĩnh Hy, nắng gió, biển xanh và những khoảnh khắc yêu thương thật dịu dàng.",
     badge: "Trip diary",
     slides: [
       {
