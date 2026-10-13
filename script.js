@@ -4,59 +4,135 @@ const timelineListEl = document.getElementById("timeline-list");
 
 const timelineMoments = [
   {
-    type: "single",
-    date: "28/03/2026",
-    location: "Đền Chử Đồng Tử - Tiên Dung, Hưng Yên",
-    title: "Buổi hẹn mang màu gỗ trầm và tiếng cười rất nhẹ",
-    description:
-      "Một góc ảnh vừa tinh nghịch vừa bình yên, như thể hai đứa đang cùng lưu lại một buổi chiều chậm hơn thường ngày.",
-    image: "img/chu-dong-tu-tien-dung-safe.jpg",
-    alt: "Khang và Mi Sun chụp ảnh cùng nhau tại Đền Chử Đồng Tử - Tiên Dung",
-    badge: "Temple date",
-    quote: "Nơi cổ kính làm khung nền cho một ngày thật trẻ."
+    "type": "single",
+    "sortDate": "2026-03-28",
+    "date": "28/03/2026",
+    "location": "Đền Chử Đồng Tử - Tiên Dung, Hưng Yên",
+    "title": "Một buổi đi chơi ở Hưng Yên",
+    "description": "Ghé đền Chử Đồng Tử - Tiên Dung, đi dạo và chụp một tấm ảnh chung.",
+    "image": "img/chu-dong-tu-tien-dung-safe.jpg",
+    "alt": "Khang và Mi Sun tại đền Chử Đồng Tử - Tiên Dung",
+    "quote": "Một tấm ảnh sau buổi đi dạo."
   },
   {
-    type: "slideshow",
-    date: "09/04 - 11/04/2026",
-    location: "Vĩnh Hy, Ninh Thuận",
-    title: "Một chuyến đi, nhiều lát cắt của cùng một miền nhớ",
-    description:
-      "Lần đầu cùng nhau đến Vĩnh Hy, nắng gió, biển xanh và những khoảnh khắc yêu thương thật dịu dàng.",
-    badge: "Trip diary",
-    slides: [
+    "type": "slideshow",
+    "sortDate": "2026-04-11",
+    "date": "09–11/04/2026",
+    "location": "Vĩnh Hy, Ninh Thuận",
+    "title": "Ba ngày ở Vĩnh Hy",
+    "description": "Đi biển, ghé vườn nho và dừng chân ở vài chỗ dọc đường. Một chuyến đi có khá nhiều ảnh để xem lại.",
+    "slides": [
       {
-        image: "img/vinh-hy-1-safe.jpg",
-        alt: "Khang và Mi Sun chụp cùng khung cảnh vịnh Vĩnh Hy",
-        caption: "Bắt đầu chuyến đi bằng một vườn nho đầy nắng, vừa lạ vừa vui."
+        "image": "img/vinh-hy-1-safe.jpg",
+        "alt": "Khang và Mi Sun trong chuyến đi Vĩnh Hy, ảnh 1",
+        "caption": "Ghé vườn nho trong chuyến đi."
       },
       {
-        image: "img/vinh-hy-2-safe.jpg",
-        alt: "Khoảnh khắc tại Vĩnh Hy của Khang và Mi Sun",
-        caption: "Một góc suối đá yên yên, nơi hai đứa chỉ cần ngồi cạnh nhau là đủ."
+        "image": "img/vinh-hy-2-safe.jpg",
+        "alt": "Khang và Mi Sun trong chuyến đi Vĩnh Hy, ảnh 2",
+        "caption": "Dừng chân bên suối đá."
       },
       {
-        image: "img/vinh-hy-3-safe.jpg",
-        alt: "Khang và Mi Sun lưu lại ảnh kỷ niệm ở Vĩnh Hy",
-        caption: "Giỏ nho đầy dần lên, còn album của tụi mình cũng đầy thêm từng chút."
+        "image": "img/vinh-hy-3-safe.jpg",
+        "alt": "Khang và Mi Sun trong chuyến đi Vĩnh Hy, ảnh 3",
+        "caption": "Thêm một tấm ở vườn nho."
       },
       {
-        image: "img/vinh-hy-4-safe.jpg",
-        alt: "Một góc kỷ niệm khác tại Vĩnh Hy của Khang và Mi Sun",
-        caption: "Buổi chiều sát biển với gió nhẹ và ánh nắng làm da trời trong hơn."
+        "image": "img/vinh-hy-4-safe.jpg",
+        "alt": "Khang và Mi Sun trong chuyến đi Vĩnh Hy, ảnh 4",
+        "caption": "Buổi chiều ở gần biển."
       },
       {
-        image: "img/vinh-hy-5-safe.jpg",
-        alt: "Khang và Mi Sun tạo dáng tại Vĩnh Hy",
-        caption: "Một khoảnh khắc nghỉ chân nhìn ra đồi núi, rất hợp để nhớ về thật lâu."
+        "image": "img/vinh-hy-5-safe.jpg",
+        "alt": "Khang và Mi Sun trong chuyến đi Vĩnh Hy, ảnh 5",
+        "caption": "Nghỉ chân giữa đường, phía sau là đồi núi."
       },
       {
-        image: "img/vinh-hy-6-safe.jpg",
-        alt: "Khung cảnh tiếp theo trong chuyến đi Vĩnh Hy của Khang và Mi Sun",
-        caption: "Tấm cuối nhìn xuống vịnh, như lời chốt lại cho một chuyến đi biển rất đẹp."
+        "image": "img/vinh-hy-6-safe.jpg",
+        "alt": "Khang và Mi Sun trong chuyến đi Vĩnh Hy, ảnh 6",
+        "caption": "Nhìn xuống vịnh trước khi kết thúc chuyến đi."
       }
     ]
+  },
+  {
+    "type": "single",
+    "sortDate": "2026-07-01",
+    "date": "Tháng 07/2026",
+    "location": "Về quê",
+    "title": "Một lần về quê",
+    "description": "Không nhớ chính xác hôm nào, chỉ còn tấm ảnh chụp trên xe lúc hai đứa về quê.",
+    "image": "img/ve-que-2026-07.jpg",
+    "alt": "Khang lái xe, Mi Sun chụp ảnh trên đường về quê",
+    "quote": "Một tấm chụp trên đường về."
+  },
+  {
+    "type": "slideshow",
+    "sortDate": "2026-08-09",
+    "date": "07–09/08/2026",
+    "location": "Sa Pa, Lào Cai",
+    "title": "Cuối tuần đi Sa Pa",
+    "description": "Lên đường từ tối thứ Sáu, dành cuối tuần đi chơi ở Sa Pa. Có núi, có mây và vài tấm ảnh chụp vội.",
+    "slides": [
+      {
+        "image": "img/sa-pa-2026-08-07.jpg",
+        "alt": "Khang ngồi trên xe trong buổi tối lên đường đi Sa Pa",
+        "caption": "07/08 · Lên đường từ tối thứ Sáu."
+      },
+      {
+        "image": "img/sa-pa-2026-08-08.jpg",
+        "alt": "Khang và Mi Sun chụp ảnh với núi và mây ở Sa Pa",
+        "caption": "08/08 · Chụp một tấm với núi và mây phía sau."
+      },
+      {
+        "image": "img/sa-pa-2026-08-09.jpg",
+        "alt": "Khang và Mi Sun vui đùa trong chuyến đi Sa Pa",
+        "caption": "09/08 · Thêm một tấm trước khi về."
+      }
+    ]
+  },
+  {
+    "type": "single",
+    "sortDate": "2026-09-02",
+    "date": "02/09/2026",
+    "location": "Hà Nội",
+    "title": "Tối Quốc khánh xem pháo hoa",
+    "description": "Ở Hà Nội dịp 2/9, cùng xem pháo hoa và chụp lại một góc thành phố buổi tối.",
+    "image": "img/phao-hoa-2026-09-02.jpg",
+    "alt": "Pháo hoa trên bầu trời Hà Nội tối Quốc khánh 2/9",
+    "quote": "Pháo hoa tối 2/9."
+  },
+  {
+    "type": "slideshow",
+    "sortDate": "2026-09-20",
+    "date": "20/09/2026",
+    "location": "Tại nhà",
+    "title": "Ngày dạm ngõ",
+    "description": "Hai gia đình gặp nhau trong buổi dạm ngõ. Chụp một tấm trước cửa nhà để lưu lại ngày này.",
+    "slides": [
+      {
+        "image": "img/dam-ngo-2026-09-20-1.jpg",
+        "alt": "Khang và Mi Sun đứng trước nhà trong ngày dạm ngõ",
+        "caption": "Một tấm ảnh chung trong ngày dạm ngõ."
+      },
+      {
+        "image": "img/dam-ngo-2026-09-20-2.jpg",
+        "alt": "Phông lễ dạm ngõ ghi ngày 20/09/2026",
+        "caption": "Góc trang trí cho buổi gặp mặt hai gia đình."
+      }
+    ]
+  },
+  {
+    "type": "single",
+    "sortDate": "2026-10-08",
+    "date": "08/10/2026",
+    "location": "Hà Nội",
+    "title": "Đi thử váy cưới",
+    "description": "Cùng đi thử váy cưới, xem từng kiểu và chụp lại để dễ chọn hơn.",
+    "image": "img/thu-vay-cuoi-2026-10-08.jpg",
+    "alt": "Mi Sun thử váy cưới trắng trước gương tại cửa hàng",
+    "quote": "Một mẫu váy trong buổi thử đồ."
   }
-];
+].sort((a, b) => b.sortDate.localeCompare(a.sortDate));
 
 function updateLoveDays() {
   const now = new Date();
@@ -130,6 +206,8 @@ function createSingleImage(moment) {
 
   const image = document.createElement("img");
   image.className = "timeline-photo";
+  image.loading = "lazy";
+  image.decoding = "async";
   image.src = moment.image;
   image.alt = moment.alt;
 
@@ -178,7 +256,8 @@ function createSlideshow(moment, index) {
   const slides = moment.slides.map((slide, slideIndex) => {
     const img = document.createElement("img");
     img.className = "timeline-photo";
-    img.src = slide.image;
+    img.loading = "lazy";
+    img.decoding = "async";
     img.alt = slide.alt;
     img.dataset.active = slideIndex === 0 ? "true" : "false";
     viewport.appendChild(img);
@@ -198,7 +277,11 @@ function createSlideshow(moment, index) {
       const isActive = slideIndex === nextIndex;
       img.dataset.active = String(isActive);
       dot.dataset.active = String(isActive);
+      dot.setAttribute("aria-pressed", String(isActive));
       if (isActive) {
+        if (!img.hasAttribute("src")) {
+          img.src = slide.image;
+        }
         caption.textContent = slide.caption;
       }
     });
@@ -215,9 +298,14 @@ function createSlideshow(moment, index) {
   }
 
   let autoplayId = null;
+  let isVisible = false;
 
   function startAutoplay() {
     stopAutoplay();
+    if (!isVisible || visual.matches(":hover, :focus-within") ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
     autoplayId = window.setInterval(() => {
       moveSlide(1);
     }, 4200);
@@ -226,6 +314,7 @@ function createSlideshow(moment, index) {
   function stopAutoplay() {
     if (autoplayId) {
       window.clearInterval(autoplayId);
+      autoplayId = null;
     }
   }
 
@@ -257,37 +346,75 @@ function createSlideshow(moment, index) {
   visual.append(viewport, createImageMeta(moment), overlay, prev, next, dots);
 
   setActiveSlide(0);
-  startAutoplay();
+  const visibilityObserver = new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible) {
+      startAutoplay();
+    } else {
+      stopAutoplay();
+    }
+  }, { threshold: 0.15 });
+  visibilityObserver.observe(visual);
 
   return visual;
 }
 
 function renderTimeline() {
-  timelineMoments.forEach((moment, index) => {
-    const card = document.createElement("article");
-    card.className = `timeline-item ${moment.type === "slideshow" ? "featured" : ""}`;
+  const loadMore = document.getElementById("timeline-load-more");
+  const status = document.getElementById("timeline-status");
+  const batchSize = 2;
+  let renderedCount = 0;
 
-    const content = document.createElement("div");
-    content.className = "timeline-content";
+  function appendMoments() {
+    const nextMoments = timelineMoments.slice(renderedCount, renderedCount + batchSize);
+    nextMoments.forEach((moment, index) => {
+      const card = document.createElement("article");
+      card.className = `timeline-item ${moment.type === "slideshow" ? "featured" : ""}`;
 
-    const date = document.createElement("p");
-    date.className = "timeline-date";
-    date.textContent = moment.date;
+      const content = document.createElement("div");
+      content.className = "timeline-content";
 
-    const location = document.createElement("p");
-    location.className = "timeline-place";
-    location.textContent = moment.location;
+      const date = document.createElement("p");
+      date.className = "timeline-date";
+      date.textContent = moment.date;
 
-    const title = document.createElement("h3");
-    title.textContent = moment.title;
+      const location = document.createElement("p");
+      location.className = "timeline-place";
+      location.textContent = moment.location;
 
-    const description = document.createElement("p");
-    description.textContent = moment.description;
+      const title = document.createElement("h3");
+      title.textContent = moment.title;
 
-    content.append(date, location, title, description);
-    card.append(moment.type === "slideshow" ? createSlideshow(moment, index) : createSingleImage(moment), content);
-    timelineListEl.appendChild(card);
-  });
+      const description = document.createElement("p");
+      description.textContent = moment.description;
+
+      content.append(date, location, title, description);
+      card.dataset.date = moment.sortDate;
+      card.append(moment.type === "slideshow" ? createSlideshow(moment, renderedCount + index) : createSingleImage(moment), content);
+      timelineListEl.appendChild(card);
+    });
+    renderedCount += nextMoments.length;
+    const hasMore = renderedCount < timelineMoments.length;
+    loadMore.hidden = !hasMore;
+    status.textContent = hasMore
+      ? `Đã hiển thị ${renderedCount}/${timelineMoments.length} cột mốc. Cuộn xuống để xem tiếp.`
+      : "Đã xem hết các cột mốc hiện tại.";
+    if (!hasMore) {
+      observer.disconnect();
+    }
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      appendMoments();
+    }
+  }, { rootMargin: "0px 0px 240px 0px" });
+
+  loadMore.addEventListener("click", appendMoments);
+  appendMoments();
+  if (!loadMore.hidden) {
+    observer.observe(loadMore);
+  }
 }
 
 renderTimeline();
