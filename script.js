@@ -4,6 +4,32 @@ const timelineListEl = document.getElementById("timeline-list");
 
 const timelineMoments = [
   {
+    type: "slideshow",
+    milestone: true,
+    sortDate: "2026-10-28",
+    date: "28/10/2026",
+    location: "Trụ sở UBND",
+    title: "Chính thức là vợ chồng",
+    description: "Cùng đi đăng ký kết hôn, nhận giấy chứng nhận rồi chụp vài tấm ảnh trước khi về. Từ hôm nay, hai đứa chính thức là vợ chồng.",
+    slides: [
+      {
+        image: "img/dang-ky-ket-hon-2026-10-28-2.jpg",
+        alt: "Khang và Mi Sun cầm giấy chứng nhận kết hôn và hoa trước trụ sở UBND",
+        caption: "28/10/2026 · Ngày đăng ký kết hôn."
+      },
+      {
+        image: "img/dang-ky-ket-hon-2026-10-28-1.jpg",
+        alt: "Mi Sun cầm giấy chứng nhận kết hôn và bó hoa sau khi đăng ký",
+        caption: "Nhận giấy chứng nhận, lưu lại một tấm."
+      },
+      {
+        image: "img/dang-ky-ket-hon-2026-10-28-3.jpg",
+        alt: "Hai vợ chồng chụp ảnh cùng nhau ở sân trụ sở UBND",
+        caption: "Thêm một tấm của hai vợ chồng trước khi về."
+      }
+    ]
+  },
+  {
     "type": "single",
     "sortDate": "2026-03-28",
     "date": "28/03/2026",
@@ -359,6 +385,37 @@ function createSlideshow(moment, index) {
   return visual;
 }
 
+function setupMilestone(card, content) {
+  card.classList.add("timeline-milestone");
+  const label = document.createElement("p");
+  label.className = "milestone-label";
+  const rings = document.createElement("span");
+  rings.className = "milestone-rings";
+  rings.setAttribute("aria-hidden", "true");
+  label.append(rings, "Đăng ký kết hôn");
+  content.prepend(label);
+
+  const sparkles = document.createElement("span");
+  sparkles.className = "milestone-sparkles";
+  sparkles.setAttribute("aria-hidden", "true");
+  for (let index = 0; index < 14; index += 1) {
+    const sparkle = document.createElement("i");
+    sparkle.style.left = `${5 + index * 7}%`;
+    sparkle.style.setProperty("--delay", `${index % 5 * 0.12}s`);
+    sparkle.style.setProperty("--drift", `${index % 2 ? 36 : -36}px`);
+    sparkles.appendChild(sparkle);
+  }
+  card.appendChild(sparkles);
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      card.classList.add("is-celebrating");
+      observer.disconnect();
+    }
+  }, { threshold: 0.25 });
+  observer.observe(card);
+}
+
 function renderTimeline() {
   const loadMore = document.getElementById("timeline-load-more");
   const status = document.getElementById("timeline-status");
@@ -391,6 +448,9 @@ function renderTimeline() {
       content.append(date, location, title, description);
       card.dataset.date = moment.sortDate;
       card.append(moment.type === "slideshow" ? createSlideshow(moment, renderedCount + index) : createSingleImage(moment), content);
+      if (moment.milestone) {
+        setupMilestone(card, content);
+      }
       timelineListEl.appendChild(card);
     });
     renderedCount += nextMoments.length;
